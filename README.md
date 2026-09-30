@@ -1,5 +1,7 @@
 # StellarSponsor — Micro-mecenazgo transparente en Stellar
 
+**Demo en vivo (Stellar Testnet):** https://anthonycz6.github.io/stellarsponsor/
+
 dApp de micro-mecenazgo construida sobre **Stellar Soroban**. Un creador publica una campaña con una
 meta en XLM y cualquier persona puede apoyarla firmando una donación con su billetera **Freighter**.
 Cada donación **transfiere XLM real directamente al creador** y queda registrada en un contrato

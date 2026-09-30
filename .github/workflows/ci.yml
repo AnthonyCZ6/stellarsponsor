@@ -22,7 +22,7 @@ jobs:
       run:
         working-directory: contracts
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # Instala el toolchain, targets y componentes declarados en rust-toolchain.toml.
       - name: Instalar toolchain
@@ -44,7 +44,7 @@ jobs:
       - name: Build Wasm
         run: cargo build --locked --target wasm32-unknown-unknown --release
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: stellar_sponsor-wasm
           path: contracts/target/wasm32-unknown-unknown/release/stellar_sponsor.wasm
@@ -57,9 +57,9 @@ jobs:
       run:
         working-directory: frontend
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -79,15 +79,15 @@ jobs:
       run:
         working-directory: frontend
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
           cache-dependency-path: frontend/package-lock.json
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: stellar_sponsor-wasm
           path: contracts/target/wasm32-unknown-unknown/release
