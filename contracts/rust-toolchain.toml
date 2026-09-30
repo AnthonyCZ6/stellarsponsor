@@ -1,0 +1,8 @@
+# soroban-sdk 20.x necesita Rust <= 1.80:
+# - Desde 1.81, un panic que cruza una función `extern "C"` aborta el proceso, y las pruebas
+#   `should_panic` del SDK 20 fallan con "non-unwinding panic".
+# - Desde 1.82, `wasm32-unknown-unknown` activa `reference-types` y la red rechaza el Wasm.
+[toolchain]
+channel = "1.80.1"
+targets = ["wasm32-unknown-unknown"]
+components = ["rustfmt", "clippy"]
